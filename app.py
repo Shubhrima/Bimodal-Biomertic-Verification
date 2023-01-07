@@ -16,7 +16,7 @@ classes = ['ben_afflek','elton_john','jerry_seinfeld', 'madonna','mindy_kaling']
 
 def import_and_predict(image_data, model):    
         img_size=(224,224)
-        #image = ImageOps.fit(image_data, img_size, Image.ANTIALIAS)
+        image = ImageOps.fit(image_data, img_size, Image.ANTIALIAS)
         img = np.expand_dims(image_data, axis=0)
         prediction = model.predict(img)
         return prediction
@@ -34,7 +34,7 @@ else:
     index = np.argmax(predictions[0])
     finger_predicted_class = classes[index]
     probability = predictions[0][index]*100
-    print("This fingerprint belongs to ",finger_predicted_class," with a ",probability," percent confidence.")
+ st.write("This fingerprint belongs to ",finger_predicted_class," with a ",probability," percent confidence.")
 
 
 
