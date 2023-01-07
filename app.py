@@ -17,7 +17,7 @@ classes = ['ben_afflek','elton_john','jerry_seinfeld', 'madonna','mindy_kaling']
 def import_and_predict(image_data, model):    
         img_size=(224,224)
         image = ImageOps.fit(image_data, img_size, Image.ANTIALIAS)
-        img = np.expand_dims(image_data, axis=0)
+        img = np.expand_dims(image, axis=0)
         prediction = model.predict(img)
         return prediction
         
