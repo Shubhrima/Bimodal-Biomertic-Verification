@@ -24,11 +24,12 @@ def import_and_predict(image_data, model):
 if file is None:
     st.text("Please upload an image file.")
 else:
-    img = cv2.imread(file)    
-    """img = cv2.resize(img,(224,224))
-                images_arr = np.asarray(img)
-                images_arr = images_arr.astype('float32')
-                images_arr = images_arr.reshape(-1, 224,224, 1)"""
+    st.text(file)
+    img = cv2.imread(file)   
+    img = cv2.resize(img,(224,224))
+    images_arr = np.asarray(img)
+    images_arr = images_arr.astype('float32')
+    images_arr = images_arr.reshape(None, 224,224, 3)
     predictions = import_and_predict(img, model)
     score = tf.nn.softmax(predictions[0])
     index = np.argmax(predictions[0])
