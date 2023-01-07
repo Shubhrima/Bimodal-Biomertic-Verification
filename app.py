@@ -24,8 +24,7 @@ def import_and_predict(image_data, model):
 if file is None:
     st.text("Please upload an image file.")
 else:
-    st.text(file)
-    img = cv2.imread(file['name'])   
+    img = cv2.imread(file)   
     img = cv2.resize(img,(224,224))
     images_arr = np.asarray(img)
     images_arr = images_arr.astype('float32')
