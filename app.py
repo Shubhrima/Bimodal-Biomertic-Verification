@@ -34,7 +34,7 @@ else:
     index = np.argmax(predictions[0])
     finger_predicted_class = classes[index]
     probability = predictions[0][index]*100
- st.write("This fingerprint belongs to ",finger_predicted_class," with a ",probability," percent confidence.")
+st.write("This fingerprint belongs to ",finger_predicted_class," with a ",probability," percent confidence.")
 
 
 
