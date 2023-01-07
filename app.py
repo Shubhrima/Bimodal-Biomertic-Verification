@@ -26,10 +26,10 @@ if file is None:
 else:
     img = Image.open(file)
     st.image(img, use_column_width=True)  
-    img = cv2.resize(img,(224,224))
-    images_arr = np.asarray(img)
-    images_arr = images_arr.astype('float32')
-    images_arr = images_arr.reshape(-1, 224,224, 1)
+    """img = cv2.resize(img,(224,224))
+                images_arr = np.asarray(img)
+                images_arr = images_arr.astype('float32')
+                images_arr = images_arr.reshape(-1, 224,224, 1)"""
     predictions = import_and_predict(img, model)
     score = tf.nn.softmax(predictions[0])
     index = np.argmax(predictions[0])
