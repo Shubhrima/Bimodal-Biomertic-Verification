@@ -17,15 +17,14 @@ classes = ['ben_afflek','elton_john','jerry_seinfeld', 'madonna','mindy_kaling']
 def import_and_predict(image_data, model):    
         img_size=(224,224)
         image = ImageOps.fit(image_data, img_size, Image.ANTIALIAS)
-        img = np.expand_dims(image, axis=0)
+        img = np.expand_dims(image_data, axis=0)
         prediction = model.predict(img)
         return prediction
         
 if file is None:
     st.text("Please upload an image file.")
 else:
-    img = Image.open(file)
-    st.image(img, use_column_width=True)  
+    img = cv2.imread(file)    
     """img = cv2.resize(img,(224,224))
                 images_arr = np.asarray(img)
                 images_arr = images_arr.astype('float32')
