@@ -1,0 +1,61 @@
+
+
+/*input[type="file"] {
+    display: none;
+}*/
+
+.btn, .upload-label, .faceupload-label{
+    display: inline-block;
+    margin: 25px;
+    padding: 12px 30px;
+    background: #39D2B4;
+    color: #fff;
+    font-size: 1em;
+    transition: all .4s;
+    cursor: pointer;
+}
+
+.btn, .upload-label:hover, .faceupload-label:hover{
+    background: #34495E;
+    color: #39D2B4;
+}
+
+
+
+
+
+
+
+/* result*/
+form{
+    padding: 150px;}
+.heading{
+    background: #569DAA;
+    margin: -10%;
+    padding: 10% 10% 3% 10%;
+    margin-bottom: -70px;
+}
+h2{
+    padding-left: 150px;
+    color: white;
+    align: center;
+    margin: auto;
+    font-family: 'Montserrat', sans-serif;
+}
+.loader {
+    margin-left: 150px;
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+#result{
+    padding-left: 150px;
+    font-family: 'Montserrat', sans-serif;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
